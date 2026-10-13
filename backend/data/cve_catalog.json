@@ -1,0 +1,274 @@
+{
+  "services": {
+    "Apache HTTP Server:2.4.49": [
+      {
+        "identifier": "CVE-2021-41773",
+        "title": "Apache HTTP Server Path Traversal & Remote Code Execution",
+        "severity": "Critical",
+        "cvss": 9.8,
+        "description": "Flaw in path normalization in Apache HTTP Server 2.4.49 enables unauthenticated remote attackers to map URLs to files outside the expected document root and execute arbitrary code via CGI scripts.",
+        "exploitability": 0.95,
+        "cwe": "CWE-22",
+        "remediation": "Upgrade Apache HTTP Server to 2.4.51 or later. Disable mod_cgi if not required."
+      }
+    ],
+    "Apache HTTP Server:2.4.50": [
+      {
+        "identifier": "CVE-2021-42013",
+        "title": "Apache HTTP Server Path Traversal & RCE (Incomplete Fix)",
+        "severity": "Critical",
+        "cvss": 9.8,
+        "description": "Incomplete fix for CVE-2021-41773 allows attackers to exploit path traversal to execute arbitrary code or view sensitive configuration files.",
+        "exploitability": 0.95,
+        "cwe": "CWE-22",
+        "remediation": "Update to Apache HTTP Server 2.4.51 or newer."
+      }
+    ],
+    "Apache Log4j:2.14.1": [
+      {
+        "identifier": "CVE-2021-44228",
+        "title": "Apache Log4j JNDI Remote Code Execution (Log4Shell)",
+        "severity": "Critical",
+        "cvss": 10.0,
+        "description": "JNDI lookup feature in Log4j allows unauthenticated remote code execution when user-controlled strings are logged via LDAP or RMI endpoints.",
+        "exploitability": 1.0,
+        "cwe": "CWE-502",
+        "remediation": "Update log4j-core to 2.17.1 or higher. Set log4j2.formatMsgNoLookups=true as emergency mitigation."
+      }
+    ],
+    "Spring Framework:5.3.17": [
+      {
+        "identifier": "CVE-2022-22965",
+        "title": "Spring Framework Remote Code Execution (Spring4Shell)",
+        "severity": "Critical",
+        "cvss": 9.8,
+        "description": "Class loader manipulation via parameter binding allows attackers to write JSP web shells to webroot when running on Tomcat as a WAR deployment.",
+        "exploitability": 0.9,
+        "cwe": "CWE-94",
+        "remediation": "Upgrade Spring Framework to 5.3.18+ or 5.2.20+. Enforce custom WebDataBinder disallowFields."
+      }
+    ],
+    "OpenSSH:7.2p2": [
+      {
+        "identifier": "CVE-2016-6210",
+        "title": "OpenSSH User Enumeration Timing Attack",
+        "severity": "Medium",
+        "cvss": 5.3,
+        "description": "Timing discrepancy in SSH authentication allows unauthenticated remote attackers to determine valid system usernames.",
+        "exploitability": 0.7,
+        "cwe": "CWE-208",
+        "remediation": "Upgrade OpenSSH to version 7.3 or above."
+      },
+      {
+        "identifier": "CVE-2016-10009",
+        "title": "OpenSSH Untrusted Search Path Remote Code Execution",
+        "severity": "High",
+        "cvss": 7.8,
+        "description": "Vulnerability in ssh-agent forwarding allows loading of arbitrary PKCS#11 modules leading to command execution.",
+        "exploitability": 0.8,
+        "cwe": "CWE-426",
+        "remediation": "Disable ssh-agent forwarding or update OpenSSH."
+      }
+    ],
+    "OpenSSH:8.2p1": [
+      {
+        "identifier": "CVE-2023-38408",
+        "title": "OpenSSH PKCS#11 Provider Remote Code Execution",
+        "severity": "Critical",
+        "cvss": 9.8,
+        "description": "Flaw in ssh-agent's PKCS#11 provider allows arbitrary shared library loading and remote execution via forwarded agent sockets.",
+        "exploitability": 0.9,
+        "cwe": "CWE-426",
+        "remediation": "Upgrade OpenSSH to 9.3p2 or newer."
+      }
+    ],
+    "Citrix Gateway:13.1": [
+      {
+        "identifier": "CVE-2023-4966",
+        "title": "Citrix NetScaler ADC / Gateway Sensitive Memory Leak (Citrix Bleed)",
+        "severity": "Critical",
+        "cvss": 9.4,
+        "description": "Buffer overflow in OpenID Connect endpoint dumps active session tokens, allowing attackers to bypass multi-factor authentication.",
+        "exploitability": 0.95,
+        "cwe": "CWE-119",
+        "remediation": "Apply vendor security patch immediately and terminate all active session cookies."
+      }
+    ],
+    "Active Directory Netlogon:2019": [
+      {
+        "identifier": "CVE-2020-1472",
+        "title": "Microsoft Netlogon Elevation of Privilege (Zerologon)",
+        "severity": "Critical",
+        "cvss": 10.0,
+        "description": "Cryptographic flaw in AES-CFB8 implementation allows unauthenticated attackers to set the domain controller password to blank.",
+        "exploitability": 1.0,
+        "cwe": "CWE-327",
+        "remediation": "Install Microsoft Patch KB4565349 and enforce secure RPC communications."
+      }
+    ],
+    "PostgreSQL:12.0": [
+      {
+        "identifier": "CVE-2019-10208",
+        "title": "PostgreSQL Type Confusion Arbitrary Memory Disclosure",
+        "severity": "High",
+        "cvss": 7.5,
+        "description": "Type confusion when handling custom user-defined type conversions can trigger server crashes or leak backend memory contents.",
+        "exploitability": 0.75,
+        "cwe": "CWE-843",
+        "remediation": "Upgrade PostgreSQL to version 12.1 or newer."
+      }
+    ],
+    "Redis:6.0": [
+      {
+        "identifier": "CVE-2022-0543",
+        "title": "Redis Debian/Ubuntu Package Lua Sandbox Escape RCE",
+        "severity": "Critical",
+        "cvss": 10.0,
+        "description": "Improper initialization of Lua library in packaged Redis instances allows unauthenticated attackers to execute arbitrary system commands via Lua scripts.",
+        "exploitability": 1.0,
+        "cwe": "CWE-269",
+        "remediation": "Upgrade redis-server debian package and require strong authentication passwords."
+      }
+    ],
+    "Microsoft Outlook / Windows:2021": [
+      {
+        "identifier": "CVE-2024-21413",
+        "title": "Microsoft Outlook Moniker Remote Code Execution",
+        "severity": "Critical",
+        "cvss": 9.8,
+        "description": "Bypasses Protected View checks via crafted 'file://' monikers, sending NTLM hashes or executing untrusted code with user privileges.",
+        "exploitability": 0.9,
+        "cwe": "CWE-20",
+        "remediation": "Apply Microsoft February 2024 Patch Tuesday updates."
+      }
+    ],
+    "Palo Alto PAN-OS:10.2": [
+      {
+        "identifier": "CVE-2024-3400",
+        "title": "Palo Alto PAN-OS GlobalProtect Command Injection",
+        "severity": "Critical",
+        "cvss": 10.0,
+        "description": "Command injection vulnerability in the GlobalProtect feature of PAN-OS software allows unauthenticated attackers to execute arbitrary code with root privileges.",
+        "exploitability": 1.0,
+        "cwe": "CWE-77",
+        "remediation": "Update to PAN-OS 10.2.9-h1, 11.0.4-h1, or 11.1.2-h3."
+      }
+    ]
+  },
+  "device_templates": [
+    {
+      "key": "web_server",
+      "name": "Apache-DMZ-WebServer",
+      "type": "Web Server",
+      "os": "Ubuntu Linux 22.04 LTS",
+      "criticality": "Medium",
+      "zone": "DMZ",
+      "internet_exposed": true,
+      "privilege_level": "User",
+      "services": [
+        "Apache HTTP Server:2.4.49",
+        "OpenSSH:7.2p2"
+      ],
+      "default_ports": [80, 443, 22],
+      "security_controls": ["Web Application Firewall (WAF)"],
+      "description": "Customer-facing web server running vulnerable Apache 2.4.49 with mod_cgi."
+    },
+    {
+      "key": "app_server",
+      "name": "Core-Banking-AppServer",
+      "type": "Application Server",
+      "os": "Red Hat Enterprise Linux 9",
+      "criticality": "High",
+      "zone": "Internal App Tier",
+      "internet_exposed": false,
+      "privilege_level": "Elevated",
+      "services": [
+        "Spring Framework:5.3.17",
+        "Apache Log4j:2.14.1",
+        "OpenSSH:8.2p1"
+      ],
+      "default_ports": [8080, 8443, 22],
+      "security_controls": ["EDR Agent", "Host Firewall"],
+      "description": "Internal business application server running Spring Boot and vulnerable Log4j library."
+    },
+    {
+      "key": "database",
+      "name": "Customer-PostgreSQL-DB",
+      "type": "Database",
+      "os": "Oracle Enterprise Linux 8.8",
+      "criticality": "Critical",
+      "zone": "Secure Data Zone",
+      "internet_exposed": false,
+      "privilege_level": "Admin",
+      "services": [
+        "PostgreSQL:12.0",
+        "Redis:6.0"
+      ],
+      "default_ports": [5432, 6379],
+      "security_controls": ["Data Encryption at Rest", "Database Activity Monitoring"],
+      "description": "Production database storing encrypted customer records and financial ledgers."
+    },
+    {
+      "key": "firewall",
+      "name": "Perimeter-NextGen-Firewall",
+      "type": "Firewall",
+      "os": "Palo Alto PAN-OS 10.2",
+      "criticality": "High",
+      "zone": "DMZ",
+      "internet_exposed": true,
+      "privilege_level": "Admin",
+      "services": [
+        "Palo Alto PAN-OS:10.2"
+      ],
+      "default_ports": [443, 22, 80],
+      "security_controls": ["Stateful Inspection", "IPS / Deep Packet Inspection"],
+      "description": "Perimeter barrier filtering ingress internet traffic with GlobalProtect VPN."
+    },
+    {
+      "key": "domain_controller",
+      "name": "Enterprise-Domain-Controller",
+      "type": "Domain Controller",
+      "os": "Windows Server 2019 Datacenter",
+      "criticality": "Critical",
+      "zone": "Management Tier",
+      "internet_exposed": false,
+      "privilege_level": "SYSTEM/Root",
+      "services": [
+        "Active Directory Netlogon:2019"
+      ],
+      "default_ports": [88, 389, 445, 135],
+      "security_controls": ["Active Directory Hardening", "EDR Agent"],
+      "description": "Active Directory Domain Controller authenticating internal corporate credentials."
+    },
+    {
+      "key": "workstation",
+      "name": "Finance-Admin-Workstation",
+      "type": "Workstation",
+      "os": "Windows 11 Pro 23H2",
+      "criticality": "Medium",
+      "zone": "Internal Corporate Subnet",
+      "internet_exposed": false,
+      "privilege_level": "User",
+      "services": [
+        "Microsoft Outlook / Windows:2021"
+      ],
+      "default_ports": [3389, 445],
+      "security_controls": ["Antivirus / EDR"],
+      "description": "Employee workstation used for internal banking and wire transfers."
+    },
+    {
+      "key": "scanner_appliance",
+      "name": "Nessus-Packet-Scanner",
+      "type": "Scanner Appliance",
+      "os": "Alpine Linux 3.19 (Hardened)",
+      "criticality": "Low",
+      "zone": "Management Tier",
+      "internet_exposed": false,
+      "privilege_level": "Admin",
+      "services": [],
+      "default_ports": [8834],
+      "security_controls": ["Encrypted Management Tunnel"],
+      "description": "Centralized vulnerability scanning and packet probing appliance."
+    }
+  ]
+}

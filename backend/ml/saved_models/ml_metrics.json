@@ -1,0 +1,186 @@
+{
+  "Logistic Regression": {
+    "accuracy": 0.9367,
+    "precision": 0.9372,
+    "recall": 0.9367,
+    "f1_score": 0.9368,
+    "roc_auc": 0.9935,
+    "confusion_matrix": [
+      [
+        136,
+        9,
+        0,
+        0
+      ],
+      [
+        8,
+        337,
+        19,
+        0
+      ],
+      [
+        0,
+        13,
+        357,
+        10
+      ],
+      [
+        0,
+        0,
+        17,
+        294
+      ]
+    ],
+    "classes": [
+      "Low",
+      "Medium",
+      "High",
+      "Critical"
+    ]
+  },
+  "Random Forest": {
+    "accuracy": 0.8525,
+    "precision": 0.8552,
+    "recall": 0.8525,
+    "f1_score": 0.8532,
+    "roc_auc": 0.9697,
+    "confusion_matrix": [
+      [
+        120,
+        25,
+        0,
+        0
+      ],
+      [
+        16,
+        301,
+        47,
+        0
+      ],
+      [
+        0,
+        34,
+        327,
+        19
+      ],
+      [
+        0,
+        0,
+        36,
+        275
+      ]
+    ],
+    "classes": [
+      "Low",
+      "Medium",
+      "High",
+      "Critical"
+    ]
+  },
+  "Gradient Boosting": {
+    "accuracy": 0.8558,
+    "precision": 0.8586,
+    "recall": 0.8558,
+    "f1_score": 0.8563,
+    "roc_auc": 0.9749,
+    "confusion_matrix": [
+      [
+        114,
+        31,
+        0,
+        0
+      ],
+      [
+        13,
+        309,
+        42,
+        0
+      ],
+      [
+        0,
+        34,
+        327,
+        19
+      ],
+      [
+        0,
+        0,
+        34,
+        277
+      ]
+    ],
+    "classes": [
+      "Low",
+      "Medium",
+      "High",
+      "Critical"
+    ]
+  },
+  "Risk Regressor (Random Forest)": {
+    "mse": 12.5129,
+    "rmse": 3.5374,
+    "r2_score": 0.9726
+  },
+  "feature_importances": [
+    {
+      "feature": "network_exposure_score",
+      "importance": 0.1198
+    },
+    {
+      "feature": "internet_exposed",
+      "importance": 0.1025
+    },
+    {
+      "feature": "avg_criticality_score",
+      "importance": 0.0875
+    },
+    {
+      "feature": "max_cvss",
+      "importance": 0.0863
+    },
+    {
+      "feature": "avg_cvss",
+      "importance": 0.0832
+    },
+    {
+      "feature": "asset_criticality_score",
+      "importance": 0.0778
+    },
+    {
+      "feature": "authentication_required",
+      "importance": 0.0667
+    },
+    {
+      "feature": "sensitive_data_reached",
+      "importance": 0.0659
+    },
+    {
+      "feature": "critical_asset_reached",
+      "importance": 0.0639
+    },
+    {
+      "feature": "high_severity_vulnerabilities",
+      "importance": 0.0632
+    },
+    {
+      "feature": "privilege_escalation",
+      "importance": 0.045
+    },
+    {
+      "feature": "vulnerability_count",
+      "importance": 0.0416
+    },
+    {
+      "feature": "security_controls_bypassed",
+      "importance": 0.0412
+    },
+    {
+      "feature": "number_of_hops",
+      "importance": 0.0286
+    },
+    {
+      "feature": "path_length",
+      "importance": 0.0269
+    }
+  ]
+}
